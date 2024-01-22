@@ -1,0 +1,82 @@
+<div class="container">
+      <h2>Sửa Sản Phẩm</h2>
+
+      <!-- Form sửa sản phẩm -->
+      <form action="/edit/{{item.id}}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="tenSanPham">Tên Sản Phẩm:</label>
+          <input
+            value="{{item.ten_sp}}"
+            type="text"
+            class="form-control"
+            id="tenSanPham"
+            name="ten_sp"
+            placeholder="Nhập tên sản phẩm"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="giaTien">Giá Tiền:</label>
+          <input
+            value="{{item.gia_tien}}"
+            name="gia_tien"
+            type="number"
+            class="form-control"
+            id="giaTien"
+            placeholder="Nhập giá tiền"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="soLuong">Số Lượng:</label>
+          <input
+            value="{{item.so_luong}}"
+            name="so_luong"
+            type="number"
+            class="form-control"
+            id="soLuong"
+            placeholder="Nhập số lượng"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="soLuong">Chon anh</label>
+          <input
+            value="{{item.anh_sp}}"
+            name="anh_sp"
+            type="file"
+            class="form-control"
+            id="anh_sp"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="moTa">Mô Tả:</label>
+          <textarea
+          name="mo_ta"
+            class="form-control"
+            id="moTa"
+            rows="3"
+            placeholder="Nhập mô tả"
+            required
+          >{{item.mo_ta}}</textarea>
+        </div>
+        <div class="col">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="margin-top: 30px"
+          >
+            Lưu Sản Phẩm
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            style="margin-top: 30px"
+          >
+            <a class="dropdown-item" href="../">Trở lại </a>
+          </button>
+        </div>
+      </form>
+    </div>

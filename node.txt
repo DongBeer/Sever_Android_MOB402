@@ -1,0 +1,45 @@
+1: Ghi chú chức năng upload ảnh:
+//Cài 2 thư viện
+- npm i multer
+- npm i path
+
+//Model
+Thêm: anh_sp: String
+
+//View:
+Thêm:
+- input file có name = "anh_sp"
+- enctype="multipart/form-data" - Thêm vào form của file add.hbs
+
+//Route
+import thư viện:
+- const multer = require('multer');
+- const upload = multer({dest: 'uploads/'}); 
+
+//app
+Thêm: app.use('uploads', express.static('uploads'));
+
+//controllers
+Đổi 'const newItem = new Item(req.body);'
+Thành: 'const newItem = new Item({
+        ten_sp: req.body.ten_sp,
+        gia_tien: req.body.gia_tien,
+        so_luong: req.body.so_luong,
+        mo_ta: req.body.mo_ta,
+        //Đối với file ảnh, không sử dụng req.body mà dùng req.file.path; path là đường dẫn ảnh
+        anh_sp: req.file.path
+    });'
+
+    Sử dụng Api thì
+    - thêm route /Api
+    - Sửa dữ liệu trả về
+     ví dụ : res.render("products/index", { items, layout: "layouts/main" });
+     thành res.json({ items });
+
+     thêm body-parser vào file app.js
+
+     var body-parser = require('body-parser');
+     
+     sử dụng body-parser middleware để xử lý post
+     app.use(body-parser.json());
+     app.use(body-parser.urlencoded({extended: true}));

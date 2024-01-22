@@ -1,0 +1,77 @@
+<div class="container">
+      <h2>Thêm Sản Phẩm</h2>
+
+      <form action="./add" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="tenSanPham">Tên Sản Phẩm:</label>
+          <input
+          name="ten_sp"
+            type="text"
+            class="form-control"
+            id="tenSanPham"
+            placeholder="Nhập tên sản phẩm"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="giaTien">Giá Tiền:</label>
+          <input
+          name="gia_tien"
+            type="number"
+            class="form-control"
+            id="giaTien"
+            placeholder="Nhập giá tiền"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="so_luong">So luong</label>
+          <input
+          name="so_luong"
+            type="number"
+            class="form-control"
+            id="so_luong"
+            placeholder="so luong"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="anh_sp">chon file</label>
+          <input
+          name="anh_sp"
+            type="file"
+            class="form-control"
+            id="anh_sp"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="moTa">Mô Tả:</label>
+          <textarea
+          name="mo_ta"
+            class="form-control"
+            id="moTa"
+            rows="3"
+            placeholder="Nhập mô tả"
+            required
+          ></textarea>
+        </div>
+        <div class="col">
+          <button
+            type="submit"
+            class="btn btn-success"
+            style="margin-top: 30px"
+          >
+            Thêm Sản Phẩm
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            style="margin-top: 30px"
+          >
+            <a class="dropdown-item" href="./">Trở lại </a>
+          </button>
+        </div>
+      </form>
+    </div>
